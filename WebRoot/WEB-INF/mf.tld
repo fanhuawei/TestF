@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<taglib xmlns="http://java.sun.com/xml/ns/j2ee"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-jsptaglibrary_2_0.xsd"
+  version="2.0">
+    
+  <description>mobilereal functions library</description>
+  <display-name>mobilereal functions</display-name>
+  <tlib-version>1.1</tlib-version>
+  <short-name>mf</short-name>
+  <uri>http://java.mobilereal.com/jsp/functions</uri>
+  <function>
+    <description>
+       get Select select state
+    </description>
+    <name>makeSelectState</name>
+    <function-class>cn.com.mobilereal.common.util.JSPFunction</function-class>
+    <function-signature>java.lang.String makeSelectState(java.lang.Object,java.lang.Object)</function-signature>
+    <example>
+    </example>
+  </function>
+  
+  <function>
+    <description>
+       get display value by the stored id
+    </description>
+    <name>makeNameById</name>
+    <function-class>cn.com.mobilereal.common.util.JSPFunction</function-class>
+    <function-signature>java.lang.Object makeNameById(java.lang.Long, java.lang.String)</function-signature>
+    <example>
+    </example>
+  </function>
+  <function>
+    <description>
+       get display value by the stored code
+    </description>
+    <name>makeFlagByCode</name>
+    <function-class>cn.com.mobilereal.common.util.JSPFunction</function-class>
+    <function-signature>java.lang.Object makeFlagByCode(java.lang.String)</function-signature>
+    <example>
+    </example>
+  </function>
+
+  <function>
+    <description>
+       get Checkbox check state
+    </description>
+    <name>makeCheckState</name>
+    <function-class>cn.com.mobilereal.common.util.JSPFunction</function-class>
+    <function-signature>java.lang.String makeCheckState(java.lang.Object,java.lang.Object[])</function-signature>
+    <example>
+    </example>
+  </function>
+  <function>
+    <description>
+       get Single Checkbox check state
+    </description>
+    <name>makeSingleCheckState</name>
+    <function-class>cn.com.mobilereal.common.util.JSPFunction</function-class>
+    <function-signature>java.lang.String makeSingleCheckState(java.lang.Object,java.lang.Object)</function-signature>
+    <example>
+    </example>
+  </function>
+    
+  <function>
+    <description>saveButton</description>
+    <name>saveButton</name>
+    <function-class>cn.com.mobilereal.common.util.JSPFunction</function-class>
+    <function-signature>java.lang.String saveButton(java.lang.Long ,java.lang.String,java.lang.String,java.lang.String)</function-signature>
+    <example>
+    </example>
+  </function>
+  
+  <function>
+    <description>checkButton </description>
+    <name>checkButton</name>
+    <function-class>cn.com.mobilereal.common.util.JSPFunction</function-class>
+    <function-signature>java.lang.Boolean checkButton(java.lang.String)</function-signature>
+    <example>
+    </example>
+  </function>
+  
+  <function>
+    <description>checkMenu </description>
+    <name>checkMenu</name>
+    <function-class>cn.com.mobilereal.common.util.JSPFunction</function-class>
+    <function-signature>java.lang.Boolean checkMenu(java.lang.Long)</function-signature>
+    <example>
+    </example>
+  </function>
+
+  <function>
+    <description>contains </description>
+    <name>contains</name>
+    <function-class>cn.com.mobilereal.common.util.JSPFunction</function-class>
+    <function-signature>java.lang.Boolean contains(java.lang.Object,java.lang.Object[])</function-signature>
+    <example>
+    </example>
+  </function>
+  
+    
+  <function>
+    <description>makeValueByCode</description>
+    <name>makeValueByCode</name>
+    <function-class>cn.com.mobilereal.common.util.JSPFunction</function-class>
+    <function-signature>java.lang.Object makeValueByCode(java.lang.String,java.lang.String)</function-signature>
+    <example>
+    </example>
+  </function>
+  <function>
+    <description>makeActionName </description>
+    <name>makeActionName</name>
+    <function-class>cn.com.mobilereal.common.util.JSPFunction</function-class>
+    <function-signature>java.lang.String makeActionName(java.lang.String)</function-signature>
+    <example>
+    </example>
+  </function>
+  <function>
+    <description>printError</description>
+    <name>printError</name>
+    <function-class>cn.com.mobilereal.common.util.JSPFunction</function-class>
+    <function-signature>java.lang.String printError(java.lang.Throwable)</function-signature>
+    <example>
+    </example>
+  </function>
+    <function>
+    <description>makeDisplayValue</description>
+    <name>makeDisplayValue</name>
+    <function-class>cn.com.mobilereal.common.util.JSPFunction</function-class>
+    <function-signature>java.lang.Object makeDisplayValue(java.lang.String,java.lang.String)</function-signature>
+    <example>
+    </example>
+  </function>
+   
+</taglib>

@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="GD" default="compile" basedir=".">
+<property name="build" value="${basedir}/build" />
+<property name="webRoot" value="${basedir}/WebRoot"/>
+<property name="build.class" value="${webRoot}/WEB-INF/classes"/>
+<property name="src" value="${basedir}/src" />
+
+<property name="lib" value="${webRoot}/WEB-INF/lib"/>
+	<tstamp>
+	 <format property="time.stamp" pattern="yyyyMMdd"/>
+	</tstamp>
+<path id="classpath">
+   <pathelement location="${src}" />
+   <fileset dir="${lib}" includes="***.jar" />
+</path>
+
+<target name="clean" description="删除">
+   <echo message="删除目录"/>
+   <delete dir="${build.class}" />
+</target>
+
+<target name="init" description="创建目录" depends="clean">
+
+   <echo message="创建目录--以执行"/>
+
+   <mkdir dir="${build.class}" />
+
+</target>
+ 
+<target name="source" depends="init">   
+	  <zip destfile="source.zip" >   
+	   <fileset dir="${basedir}">  
+	   	<exclude name="build/"/>
+	   	<exclude name="iPad UI/"/>
+	   	<exclude name="UI效果图/"/>
+	   	<exclude name="WebRoot/html/"/>
+	   	<exclude name="WebRoot/db/"/>
+	   	<exclude name="WebRoot/excel/"/>
+	   	<exclude name="WebRoot/app/"/>
+	   </fileset>
+	  </zip>
+</target>  
+<target name="compile" description="编译文件" depends="init">
+
+   <echo message="编译文件"/>
+
+      <javac debug="true" source="1.6" target="1.6" srcdir="${src}" includeantruntime="off" destdir="${build.class}">
+
+    <classpath refid="classpath" />
+    <compilerarg line="-encoding UTF-8"/>
+   </javac>
+   <copy tofile="${webRoot}/WEB-INF/classes/log4j.properties">
+     <fileset dir="${src}" includes="log4j.properties" />
+   </copy>
+</target>
+
+<target name="war" depends="compile">   
+  <war warfile="web.war" webxml="${webRoot}/WEB-INF/web.xml">   
+   <fileset dir="${webRoot}">  
+   	<exclude name="html/"/>
+   	<exclude name="WEB-INF/lib/javax.servlet.jar"/>
+   	<exclude name="MDM/"/>
+   	<exclude name="db/"/>
+   	<exclude name="excel/"/>
+   	<exclude name="app/"/>
+   </fileset>
+  </war>
+ </target>  
+ 
+<target name="ear" description="Build the ear file" depends="war">
+	  <echo message="Building the EAR file..." />
+	  <ear destfile="app_${time.stamp}.ear" appxml="application.xml">
+	    <fileset file="web.war"/>
+	  </ear>
+</target>	
+</project>
